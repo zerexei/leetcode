@@ -20,18 +20,13 @@ var mergeAlternately = function (word1, word2) {
 ```py
 class Solution:
     def mergeAlternately(self, word1: str, word2: str) -> str:
-        i = 0
-        res = ""
-        while i < len(word1) or i < len(word2):
+        res = []
+        for i in range(max(len(word1), len(word2))):
             if i < len(word1):
-                res += word1[i]
-
+                res.append(word1[i])
             if i < len(word2):
-                res += word2[i]
-                
-            i+=1
-
-        return res
+                res.append(word2[i])
+        return "".join(res)
 ```
 
 
